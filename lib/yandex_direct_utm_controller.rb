@@ -14,5 +14,3 @@ class YandexDirectUtm::Router < NYNY::App
     end
 
 end
-
-YandexDirectUtm::Router.run! port = 3001

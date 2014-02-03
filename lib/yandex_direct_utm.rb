@@ -36,8 +36,17 @@ module YandexDirectUtm
             return attrs
         end
 
+        def public_path(file)
+            if defined?(Rails)
+                Rails.root.join("public/#{file}")
+            else
+                NYNY.root.join("public/#{file}")
+            end
+        end
+
         def self.write_txt(attrs)
-            File.open(NYNY.root.pwd.join("public/#{config(:txt_log)}"),'a') do |file|
+            path = public_path(config(:txt_log))
+            File.open(path,'a') do |file|
                 time = Time.now.utc?? Time.now : (Time.now + 4*60*60)
                 file.puts("#{time.strftime("%d/%m/%Y %H:%M:%S")}")
                 attrs.each do |key,val|
@@ -48,7 +57,8 @@ module YandexDirectUtm
         end
 
         def self.write_csv(attrs)
-            CSV.open(NYNY.root.pwd.join("public/#{config(:csv_log)}"),'a+') do |file|
+            path = public_path(config(:csv_log))
+            CSV.open(path,'a+') do |file|
                 time = Time.now.utc?? Time.now : (Time.now + 4*60*60)
                 file << ["#{time.strftime("%d/%m/%Y %H:%M:%S")}"]
                 attrs.each do |key,val|
