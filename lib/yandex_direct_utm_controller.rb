@@ -13,3 +13,4 @@ class YandexDirectRouter < NYNY::App
     end
 
 end
+YandexDirectRouter.run!

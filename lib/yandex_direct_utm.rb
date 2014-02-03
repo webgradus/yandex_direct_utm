@@ -36,7 +36,7 @@ module YandexDirectUtm
             return attrs
         end
 
-        def public_path(file)
+        def self.public_path(file)
             if defined?(Rails)
                 Rails.root.join("public/#{file}")
             else
