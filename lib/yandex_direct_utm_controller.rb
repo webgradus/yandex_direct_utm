@@ -6,7 +6,7 @@ require 'tilt'
 class YandexDirectUtm::Router < NYNY::App
 
     YandexDirectUtm::Logger.config(:searchable_routes).each do |route|
-        get route, :defaults => {:format => 'html'} do
+        get route do
             params[:page] = route
             YandexDirectUtm::Logger.write_attrs(params) unless params.empty?
             Tilt.new("app/views/#{route.gsub('/','')}.html.erb").render
