@@ -1,6 +1,5 @@
 #require "/yandex_direct_utm/version"
 require "yandex_direct_utm/yandex_direct_utm_config"
-require 'nyny'
 require 'csv'
 
 module YandexDirectUtm
