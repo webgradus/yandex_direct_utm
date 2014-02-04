@@ -7,7 +7,10 @@ InstalledFiles
 lib/bundler/man
 pkg
 rdoc
-.swp
+*.swp
+*.swo
+*.xml
+*~
 /public
 spec/reports
 test/tmp
