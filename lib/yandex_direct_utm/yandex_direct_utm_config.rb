@@ -1,22 +1,20 @@
 
-module YandexDirectUtm
-    class Config
+class YandexDirectUtm::Config
 
-        @config={
-            searchable_params: [:utm_source,:utm_medium,:utm_campaign,:utm_content,:utm_type,:utm_source,:utm_added,:utm_block,:utm_position,:utm_keyword,:page],
-            searchable_routes: ['/promo'],
-            txt_log: 'TXTLOG.txt',
-            csv_log: 'CSVLOG.csv'
-        }
+    @config={
+        searchable_params: [:utm_source,:utm_medium,:utm_campaign,:utm_content,:utm_type,:utm_source,:utm_added,:utm_block,:utm_position,:utm_keyword,:page],
+        searchable_routes: ['/promo'],
+        txt_log: 'TXTLOG.txt',
+        csv_log: 'CSVLOG.csv'
+    }
 
-        def self.config
-            @config
-        end
+    def self.config
+        @config
+    end
 
-        def self.keys
-            config.keys
-        end
-
+    def self.keys
+        config.keys
     end
 
 end
+
