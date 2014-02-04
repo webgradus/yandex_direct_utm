@@ -1,6 +1,5 @@
 require 'sinatra'
 require 'yandex_direct_utm/yandex_direct_utm_logger'
-require 'tilt'
 
 module YandexDirectUtm
     class Router < Synatra::Base
