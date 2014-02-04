@@ -2,7 +2,7 @@ require 'nyny'
 require 'yandex_direct_utm_logger'
 require 'tilt'
 
-class YandexDirectUtm::Router < NYNY::App
+class YandexDirectUtmRouter < NYNY::App
 
     YandexDirectUtm::Logger.config(:searchable_routes).each do |route|
         get route do
