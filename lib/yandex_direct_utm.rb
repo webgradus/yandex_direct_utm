@@ -1,6 +1,3 @@
 require "yandex_direct_utm/yandex_direct_utm_config"
 require 'yandex_direct_utm/yandex_direct_utm_logger'
 require 'yandex_direct_utm/yandex_direct_utm_controller'
-
-module YandexDirectUtm
-end
