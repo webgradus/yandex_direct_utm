@@ -1,5 +1,5 @@
 require 'nyny'
-require 'yandex_direct_utm_logger'
+require 'yandex_direct_utm/yandex_direct_utm_logger'
 require 'tilt'
 
 module YandexDirectUtm
