@@ -9,7 +9,7 @@ module YandexDirectUtm
             get route do
                 params[:page] = route
                 YandexDirectUtm::Logger.write_attrs(params) unless params.empty?
-                Tilt.new("app/views/yandex_direct/#{route.gsub('/','')}.html.erb").render
+                render "app/views/yandex_direct/#{route.gsub('/','')}.html.erb"
             end
         end
 
