@@ -15,4 +15,3 @@ module YandexDirectUtm
 
     end
 end
-YandexDirectUtm::Router.run!
