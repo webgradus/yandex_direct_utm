@@ -1,5 +1,4 @@
-require "sinatra/base"
-require "sinatra/namespace"
+require "sinatra"
 require 'yandex_direct_utm/yandex_direct_utm_logger'
 
 module YandexDirectUtm

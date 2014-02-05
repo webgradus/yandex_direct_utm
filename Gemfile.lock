@@ -3,6 +3,7 @@ PATH
   specs:
     yandex_direct_utm (0.0.1)
       sinatra
+      tilt (~> 1.4.1)
 
 GEM
   remote: https://rubygems.org/
