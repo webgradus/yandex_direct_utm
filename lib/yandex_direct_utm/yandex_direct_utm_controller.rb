@@ -7,7 +7,7 @@ module YandexDirectUtm
         YandexDirectUtm::Logger.config(:searchable_routes).each do |route|
             get route do
                 params[:page] = route
-                YandexDirectUtm::Logger.write_attrs(params) unless params.empty?
+                YandexDirectUtm::Logger.write_attrs(params) unless params.empty? && request.env["sinatra.error"].nil?
                 pass
             end
         end
