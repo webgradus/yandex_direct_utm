@@ -5,10 +5,10 @@ module YandexDirectUtm
     class Router < Sinatra::Base
 
         YandexDirectUtm::Logger.config(:searchable_routes).each do |route|
-            get '/service/#{route}' do
+            get route do
                 params[:page] = route
                 YandexDirectUtm::Logger.write_attrs(params) unless params.empty?
-                redirect to(route)
+                pass
             end
         end
     end
