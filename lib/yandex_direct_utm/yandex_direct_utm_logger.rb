@@ -39,7 +39,7 @@ module YandexDirectUtm
             if defined?(Rails)
                 Rails.root.join("public/#{file}")
             else
-                NYNY.root.join("public/#{file}")
+                Dir.getwd.to_s + "public/#{file}"
             end
         end
 
