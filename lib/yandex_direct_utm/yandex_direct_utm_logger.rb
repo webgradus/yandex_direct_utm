@@ -29,6 +29,7 @@ module YandexDirectUtm
         def self.build_attributes_hash(params)
             attrs={}
             params = symbolize_hash_keys(params)
+            return params
             config(:searchable_params).each do |key|
                 attrs[key] = params[key] unless params[key].nil?
             end
