@@ -1,4 +1,3 @@
-
 module YandexDirectUtm
     class Config
 
@@ -11,6 +10,19 @@ module YandexDirectUtm
 
         def self.config
             @config
+        end
+
+        def self.searchable_routes=(searchable_routes)
+          searchable_routes.each do |searchable_route|
+            YandexDirectUtm::Controller.class_eval do
+              get searchable_route do
+                params[:page] = searchable_route
+                params[:root] = settings.root
+                YandexDirectUtm::Logger.write_attrs(params) if request.env["sinatra.error"].nil?
+                pass
+              end
+            end
+          end
         end
 
         def self.keys

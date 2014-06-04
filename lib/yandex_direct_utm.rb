@@ -1,3 +1,3 @@
-require "yandex_direct_utm/yandex_direct_utm_config"
-require 'yandex_direct_utm/yandex_direct_utm_logger'
-require 'yandex_direct_utm/yandex_direct_utm_controller'
+require "yandex_direct_utm/config"
+require 'yandex_direct_utm/logger'
+require 'yandex_direct_utm/controller'

@@ -1,5 +1,5 @@
 #require "/yandex_direct_utm/version"
-require "yandex_direct_utm/yandex_direct_utm_config"
+require "yandex_direct_utm/config"
 require 'csv'
 
 module YandexDirectUtm
@@ -47,7 +47,7 @@ module YandexDirectUtm
         def self.write_txt(attrs)
             path = public_path(config(:txt_log))
             File.open(path,'a') do |file|
-                time = Time.now.utc?? Time.now : (Time.now + 4*60*60)
+                time = Time.zone.now
                 file.puts("#{time.strftime("%d/%m/%Y %H:%M:%S")}")
                 attrs.each do |key,val|
                     file.puts("#{key} : #{val}")
@@ -59,7 +59,7 @@ module YandexDirectUtm
         def self.write_csv(attrs)
             path = public_path(config(:csv_log))
             CSV.open(path,'a+') do |file|
-                time = Time.now.utc?? Time.now : (Time.now + 4*60*60)
+                time = Time.zone.now
                 file << ["#{time.strftime("%d/%m/%Y %H:%M:%S")}"]
                 attrs.each do |key,val|
                     file << [key,val]
