@@ -18,7 +18,13 @@ module YandexDirectUtm
               get searchable_route do
                 params[:page] = searchable_route
                 params[:root] = settings.root
-                YandexDirectUtm::Logger.write_attrs(params) if request.env["sinatra.error"].nil?
+                # You can use this later, for example to track users that made order
+                params.each do |key, value|
+                  session[key] = value
+                end
+                if request.env["sinatra.error"].nil? && params.keys.grep(/^utm/).present?
+                  YandexDirectUtm::Logger.write_attrs(params)
+                end
                 pass
               end
             end
